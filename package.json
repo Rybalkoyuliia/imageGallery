@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/rybalkoyuliia.github.io/goit-js-hw-11-2/",
+    "build": "vite build --base=/Rybalkoyuliia/imageGallery",
     "preview": "vite preview"
   },
   "devDependencies": {
