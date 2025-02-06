@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/Rybalkoyuliia/imageGallery",
+    "build": "vite build --base=/imageGallery",
     "preview": "vite preview"
   },
   "devDependencies": {
