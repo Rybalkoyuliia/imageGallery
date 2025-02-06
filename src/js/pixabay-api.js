@@ -15,7 +15,7 @@ export default async function fetchImages(searchWord, page) {
         orientation: 'horizontal',
         safesearch: true,
         page,
-        per_page: 40,
+        per_page: 42,
       },
     });
     renderMarkup(response.data);
