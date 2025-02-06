@@ -88,8 +88,6 @@ function handleScrollClick() {
 document.addEventListener('scroll', onScroll);
 
 function onScroll(event) {
-  console.log(window.scrollY);
-  console.log(window.innerHeight);
   window.scrollY < window.innerHeight
     ? refs.scrollUp.classList.add('hidden')
     : refs.scrollUp.classList.remove('hidden');
