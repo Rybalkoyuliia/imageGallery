@@ -2,22 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Images</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
-
-    <load src="./partials/footer.html" />
-
+    <form class="form">
+      <input class="input" name="search" placeholder="Search images..." />
+      <button class="submit-btn" type="submit">Search</button>
+    </form>
+    <ul class="img-list"></ul>
+    <div class="loader-container hidden"><span class="loader"></span></div>
+    <button class="load-more-btn hidden" type="button">Load more</button>
+    <button class="scroll-up-btn hidden" type="button">&#x25B2;</button>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
