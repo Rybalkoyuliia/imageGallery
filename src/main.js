@@ -1,7 +1,7 @@
 import fetchImages from './js/pixabay-api';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import { totalImg } from './js/pixabay-api';
+import { totalImg, per_page } from './js/pixabay-api';
 
 const refs = {
   form: document.querySelector('.form'),
@@ -37,7 +37,7 @@ function onFormSubmit(event) {
     return;
   } else {
     fetchImages(wordToSearch, page).finally(() => {
-      totalPages = Math.ceil(totalImg / 40);
+      totalPages = Math.ceil(totalImg / per_page);
       refs.loader.classList.add('hidden');
       totalPages > 1
         ? refs.loadMore.classList.remove('hidden')
@@ -66,7 +66,7 @@ function handleLoadMore() {
       left: 0,
       behavior: 'smooth',
     });
-    if (page === totalPages || totalImg < 40) {
+    if (page === totalPages || totalImg < per_page) {
       refs.loadMore.classList.add('hidden');
       iziToast.info({
         message: "We're sorry, but you've reached the end of search results.",
@@ -87,7 +87,7 @@ function handleScrollClick() {
 
 document.addEventListener('scroll', onScroll);
 
-function onScroll(event) {
+function onScroll() {
   window.scrollY < window.innerHeight
     ? refs.scrollUp.classList.add('hidden')
     : refs.scrollUp.classList.remove('hidden');

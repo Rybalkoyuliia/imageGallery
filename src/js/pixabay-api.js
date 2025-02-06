@@ -3,6 +3,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import axios from 'axios';
 let totalImg = 0;
+let per_page = 42;
 
 export default async function fetchImages(searchWord, page) {
   axios.defaults.baseURL = 'https://pixabay.com/api';
@@ -15,7 +16,7 @@ export default async function fetchImages(searchWord, page) {
         orientation: 'horizontal',
         safesearch: true,
         page,
-        per_page: 42,
+        per_page,
       },
     });
     renderMarkup(response.data);
@@ -45,4 +46,4 @@ export default async function fetchImages(searchWord, page) {
 // );
 // }
 
-export { totalImg };
+export { totalImg, per_page };
